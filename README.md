@@ -1,2 +1,2 @@
 # SIPERNAS
-Sistem Informasi Perjalanan Dinas
+Sistem Informasi Perjalanan Dinas (SIPERNAS)
