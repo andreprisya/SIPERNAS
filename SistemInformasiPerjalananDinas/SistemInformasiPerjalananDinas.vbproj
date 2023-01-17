@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{E4D75C38-EF30-4EB3-A572-38DD6B8FE0B3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SistemInformasiPerjalananDinas</RootNamespace>
+    <AssemblyName>SistemInformasiPerjalananDinas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SistemInformasiPerjalananDinas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>SistemInformasiPerjalananDinas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\dashboard\circle.png" />
+    <Content Include="assets\images\dashboard\circle.svg" />
+    <Content Include="assets\images\dashboard\img_1.jpg" />
+    <Content Include="assets\images\dashboard\img_2.jpg" />
+    <Content Include="assets\images\dashboard\img_3.jpg" />
+    <Content Include="assets\images\dashboard\img_4.jpg" />
+    <Content Include="assets\images\faces-clipart\pic-1.png" />
+    <Content Include="assets\images\faces-clipart\pic-2.png" />
+    <Content Include="assets\images\faces-clipart\pic-3.png" />
+    <Content Include="assets\images\faces-clipart\pic-4.png" />
+    <Content Include="assets\images\faces\face1.jpg" />
+    <Content Include="assets\images\faces\face10.jpg" />
+    <Content Include="assets\images\faces\face11.jpg" />
+    <Content Include="assets\images\faces\face12.jpg" />
+    <Content Include="assets\images\faces\face13.jpg" />
+    <Content Include="assets\images\faces\face14.jpg" />
+    <Content Include="assets\images\faces\face15.jpg" />
+    <Content Include="assets\images\faces\face16.jpg" />
+    <Content Include="assets\images\faces\face17.jpg" />
+    <Content Include="assets\images\faces\face18.jpg" />
+    <Content Include="assets\images\faces\face19.jpg" />
+    <Content Include="assets\images\faces\face2.jpg" />
+    <Content Include="assets\images\faces\face20.jpg" />
+    <Content Include="assets\images\faces\face21.jpg" />
+    <Content Include="assets\images\faces\face22.jpg" />
+    <Content Include="assets\images\faces\face23.jpg" />
+    <Content Include="assets\images\faces\face24.jpg" />
+    <Content Include="assets\images\faces\face25.jpg" />
+    <Content Include="assets\images\faces\face26.jpg" />
+    <Content Include="assets\images\faces\face27.jpg" />
+    <Content Include="assets\images\faces\face3.jpg" />
+    <Content Include="assets\images\faces\face4.jpg" />
+    <Content Include="assets\images\faces\face5.jpg" />
+    <Content Include="assets\images\faces\face6.jpg" />
+    <Content Include="assets\images\faces\face7.jpg" />
+    <Content Include="assets\images\faces\face8.jpg" />
+    <Content Include="assets\images\faces\face9.jpg" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\logo-mini.svg" />
+    <Content Include="assets\images\logo.svg" />
+    <Content Include="assets\images\sprites\blue.png" />
+    <Content Include="assets\images\sprites\dark.png" />
+    <Content Include="assets\images\sprites\flag.png" />
+    <Content Include="assets\images\sprites\green.png" />
+    <Content Include="assets\images\sprites\jsgrid-icons.png" />
+    <Content Include="assets\images\sprites\red.png" />
+    <Content Include="assets\images\sprites\yellow.png" />
+    <Content Include="assets\js\chart.js" />
+    <Content Include="assets\js\dashboard.js" />
+    <Content Include="assets\js\file-upload.js" />
+    <Content Include="assets\js\hoverable-collapse.js" />
+    <Content Include="assets\js\jquery.cookie.js" />
+    <Content Include="assets\js\misc.js" />
+    <Content Include="assets\js\off-canvas.js" />
+    <Content Include="assets\js\todo.js" />
+    <Content Include="assets\js\todolist.js" />
+    <Content Include="assets\vendors\chart.js\Chart.min.js" />
+    <Content Include="assets\vendors\css\vendor.bundle.base.css" />
+    <Content Include="assets\vendors\js\vendor.bundle.base.js" />
+    <Content Include="assets\vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="Auth\Login-Admin.aspx" />
+    <Content Include="Auth\Login-User.aspx" />
+    <Content Include="Auth\Register.aspx" />
+    <Content Include="gulp-tasks\inject.js" />
+    <Content Include="gulp-tasks\serve.js" />
+    <Content Include="gulp-tasks\vendors.js" />
+    <Content Include="gulpfile.js" />
+    <Content Include="index.html" />
+    <Content Include="pages\charts\chartjs.html" />
+    <Content Include="pages\forms\basic_elements.html" />
+    <Content Include="pages\icons\mdi.html" />
+    <Content Include="pages\samples\blank-page.html" />
+    <Content Include="pages\samples\error-404.html" />
+    <Content Include="pages\samples\error-500.html" />
+    <Content Include="pages\samples\login.html" />
+    <Content Include="pages\samples\register.html" />
+    <Content Include="pages\tables\basic-table.html" />
+    <Content Include="pages\ui-features\buttons.html" />
+    <Content Include="pages\ui-features\typography.html" />
+    <Content Include="partials\_footer.html" />
+    <Content Include="partials\_navbar.html" />
+    <Content Include="partials\_sidebar.html" />
+    <Content Include="User-Admin\View\AnggotaDinas.aspx" />
+    <Content Include="User-Admin\View\AnggotaDinasEdit.aspx" />
+    <Content Include="User-Admin\View\HalamanProfil.aspx" />
+    <Content Include="User-Admin\View\LaporanKegiatan.aspx" />
+    <Content Include="User-Admin\View\LaporanKegiatanDetail.aspx" />
+    <Content Include="User-Admin\View\LaporanKegiatanEdit.aspx" />
+    <Content Include="User-Admin\View\SPPD.aspx" />
+    <Content Include="User-Admin\View\AnggotaDinasTambah.aspx" />
+    <Content Include="User-Admin\View\SPPDDetail.aspx" />
+    <Content Include="User-Admin\View\SPPDEdit.aspx" />
+    <Content Include="User-Dinas\View\HalamanProfil.aspx" />
+    <Content Include="User-Dinas\View\LaporanKegiatan.aspx" />
+    <Content Include="User-Dinas\View\LaporanKegiatanEdit.aspx" />
+    <Content Include="User-Dinas\View\LaporanKegiatanTambah.aspx" />
+    <Content Include="User-Dinas\View\SPPD.aspx" />
+    <Content Include="User-Dinas\View\SPPDDetail.aspx" />
+    <Content Include="User-Dinas\View\SPPDTambah.aspx" />
+    <Content Include="User-Direktur\View\SPPD.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auth\Login-Admin.aspx.designer.vb">
+      <DependentUpon>Login-Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Login-Admin.aspx.vb">
+      <DependentUpon>Login-Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Login-User.aspx.designer.vb">
+      <DependentUpon>Login-User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Login-User.aspx.vb">
+      <DependentUpon>Login-User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="User-Admin\View\AnggotaDinas.aspx.designer.vb">
+      <DependentUpon>AnggotaDinas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\AnggotaDinas.aspx.vb">
+      <DependentUpon>AnggotaDinas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\AnggotaDinasEdit.aspx.designer.vb">
+      <DependentUpon>AnggotaDinasEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\AnggotaDinasEdit.aspx.vb">
+      <DependentUpon>AnggotaDinasEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\HalamanProfil.aspx.designer.vb">
+      <DependentUpon>HalamanProfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\HalamanProfil.aspx.vb">
+      <DependentUpon>HalamanProfil.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\LaporanKegiatan.aspx.designer.vb">
+      <DependentUpon>LaporanKegiatan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\LaporanKegiatan.aspx.vb">
+      <DependentUpon>LaporanKegiatan.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\LaporanKegiatanDetail.aspx.designer.vb">
+      <DependentUpon>LaporanKegiatanDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\LaporanKegiatanDetail.aspx.vb">
+      <DependentUpon>LaporanKegiatanDetail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\LaporanKegiatanEdit.aspx.designer.vb">
+      <DependentUpon>LaporanKegiatanEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\LaporanKegiatanEdit.aspx.vb">
+      <DependentUpon>LaporanKegiatanEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\SPPD.aspx.designer.vb">
+      <DependentUpon>SPPD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\SPPD.aspx.vb">
+      <DependentUpon>SPPD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\AnggotaDinasTambah.aspx.designer.vb">
+      <DependentUpon>AnggotaDinasTambah.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\AnggotaDinasTambah.aspx.vb">
+      <DependentUpon>AnggotaDinasTambah.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\SPPDDetail.aspx.designer.vb">
+      <DependentUpon>SPPDDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\SPPDDetail.aspx.vb">
+      <DependentUpon>SPPDDetail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Admin\View\SPPDEdit.aspx.designer.vb">
+      <DependentUpon>SPPDEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Admin\View\SPPDEdit.aspx.vb">
+      <DependentUpon>SPPDEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Dinas\View\HalamanProfil.aspx.designer.vb">
+      <DependentUpon>HalamanProfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Dinas\View\HalamanProfil.aspx.vb">
+      <DependentUpon>HalamanProfil.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Dinas\View\LaporanKegiatan.aspx.designer.vb">
+      <DependentUpon>LaporanKegiatan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Dinas\View\LaporanKegiatan.aspx.vb">
+      <DependentUpon>LaporanKegiatan.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Dinas\View\LaporanKegiatanEdit.aspx.designer.vb">
+      <DependentUpon>LaporanKegiatanEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Dinas\View\LaporanKegiatanEdit.aspx.vb">
+      <DependentUpon>LaporanKegiatanEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Dinas\View\LaporanKegiatanTambah.aspx.designer.vb">
+      <DependentUpon>LaporanKegiatanTambah.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Dinas\View\LaporanKegiatanTambah.aspx.vb">
+      <DependentUpon>LaporanKegiatanTambah.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Dinas\View\SPPD.aspx.designer.vb">
+      <DependentUpon>SPPD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Dinas\View\SPPD.aspx.vb">
+      <DependentUpon>SPPD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Dinas\View\SPPDDetail.aspx.designer.vb">
+      <DependentUpon>SPPDDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Dinas\View\SPPDDetail.aspx.vb">
+      <DependentUpon>SPPDDetail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Dinas\View\SPPDTambah.aspx.designer.vb">
+      <DependentUpon>SPPDTambah.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Dinas\View\SPPDTambah.aspx.vb">
+      <DependentUpon>SPPDTambah.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="User-Direktur\View\SPPD.aspx.designer.vb">
+      <DependentUpon>SPPD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Direktur\View\SPPD.aspx.vb">
+      <DependentUpon>SPPD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\style.css.map" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Bold.eot" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Bold.woff" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Bold.woff2" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Light.eot" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Light.woff" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Light.woff2" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Medium.eot" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Medium.woff" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Medium.woff2" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Regular.eot" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Regular.woff" />
+    <Content Include="assets\fonts\Ubuntu\Ubuntu-Regular.woff2" />
+    <Content Include="assets\scss\components\_badges.scss" />
+    <Content Include="assets\scss\components\_bootstrap-progress.scss" />
+    <Content Include="assets\scss\components\_breadcrumbs.scss" />
+    <Content Include="assets\scss\components\_buttons.scss" />
+    <Content Include="assets\scss\components\_cards.scss" />
+    <Content Include="assets\scss\components\_checkbox-radio.scss" />
+    <Content Include="assets\scss\components\_dropdown.scss" />
+    <Content Include="assets\scss\components\_forms.scss" />
+    <Content Include="assets\scss\components\_icons.scss" />
+    <Content Include="assets\scss\components\_lists.scss" />
+    <Content Include="assets\scss\components\_preview.scss" />
+    <Content Include="assets\scss\components\_tables.scss" />
+    <Content Include="assets\scss\components\_todo-list.scss" />
+    <Content Include="assets\scss\landing-screens\_auth.scss" />
+    <Content Include="assets\scss\mixins\_animation.scss" />
+    <Content Include="assets\scss\mixins\_background.scss" />
+    <Content Include="assets\scss\mixins\_badges.scss" />
+    <Content Include="assets\scss\mixins\_blockqoute.scss" />
+    <Content Include="assets\scss\mixins\_breadcrumbs.scss" />
+    <Content Include="assets\scss\mixins\_buttons.scss" />
+    <Content Include="assets\scss\mixins\_cards.scss" />
+    <Content Include="assets\scss\mixins\_misc.scss" />
+    <Content Include="assets\scss\mixins\_pagination.scss" />
+    <Content Include="assets\scss\mixins\_popovers.scss" />
+    <Content Include="assets\scss\mixins\_text.scss" />
+    <Content Include="assets\scss\mixins\_tooltips.scss" />
+    <Content Include="assets\scss\style.scss" />
+    <Content Include="assets\scss\_dashboard.scss" />
+    <Content Include="assets\scss\_demo.scss" />
+    <Content Include="assets\scss\_fonts.scss" />
+    <Content Include="assets\scss\_footer.scss" />
+    <Content Include="assets\scss\_functions.scss" />
+    <Content Include="assets\scss\_layouts.scss" />
+    <Content Include="assets\scss\_misc.scss" />
+    <Content Include="assets\scss\_navbar.scss" />
+    <Content Include="assets\scss\_reset.scss" />
+    <Content Include="assets\scss\_sidebar.scss" />
+    <Content Include="assets\scss\_typography.scss" />
+    <Content Include="assets\scss\_utilities.scss" />
+    <Content Include="assets\scss\_variables.scss" />
+    <Content Include="assets\scss\_vertical-wrapper.scss" />
+    <Content Include="assets\scss\_widget-grid.scss" />
+    <Content Include="assets\vendors\js\bootstrap.min.js.map" />
+    <Content Include="assets\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="assets\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="package.json" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62717</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62717/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
