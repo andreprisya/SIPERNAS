@@ -3984,7 +3984,10 @@ textarea.form-control-lg {
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  width: 100%; }
+  width: 100%;
+    top: 0px;
+    left: 0px;
+}
   .input-group > .form-control,
   .input-group > .form-select {
     position: relative;
@@ -4723,7 +4726,10 @@ textarea.form-control-lg {
 .dropend,
 .dropdown,
 .dropstart {
-  position: relative; }
+  position: relative;
+    top: 0px;
+    left: 0px;
+}
 
 .dropdown-toggle {
   white-space: nowrap; }
@@ -11370,7 +11376,10 @@ code {
   justify-content: stretch; }
   .stretch-card > .card {
     width: 100%;
-    min-width: 100%; }
+    min-width: 100%;
+    top: 91px;
+    left: 26px;
+}
 
 @media (min-width: 576px) {
   .border-right-sm {
@@ -12551,11 +12560,13 @@ code {
 
 /* gradient buttons */
 .btn-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
-  background: linear-gradient(to right, #da8cff, #9a55ff);
-  border: 0;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease; }
+  border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    width: 75px;
+}
   .btn-gradient-primary:not([disabled]):not(.disabled):active, .btn-gradient-primary:not([disabled]):not(.disabled).active,
   .show > .btn-gradient-primary.dropdown-toggle {
     background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
@@ -13353,7 +13364,10 @@ select.form-control {
 
 .form-group .file-upload-default {
   visibility: hidden;
-  position: absolute; }
+  position: absolute;
+    top: 218px;
+    left: 109px;
+}
 
 .form-group .file-upload-info {
   background: transparent; }

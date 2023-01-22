@@ -19,11 +19,6 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
-      <style type="text/css">
-          .auto-style1 {
-              width: 307px;
-          }
-      </style>
   </head>
   <body>
       <form id="form1" runat="server">
@@ -94,14 +89,14 @@
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">Admin</p>
+                  <p class="mb-1 text-black">David Gray</p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="HalamanProfil.aspx">
+                <a class="dropdown-item" href="#">
                   <i class="mdi mdi-account me-2"></i> Profile </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../../Auth/Login-Admin.aspx">
+                <a class="dropdown-item" href="#">
                   <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
               </div>
             </li>
@@ -124,8 +119,8 @@
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">Admin</span>
-                  <span class="text-secondary text-small">Admin</span>
+                  <span class="font-weight-bold mb-2">David Gray</span>
+                  <span class="text-secondary text-small">Pegawai</span>
                 </div>
               </a>
             </li>
@@ -152,16 +147,24 @@
                   <i class="mdi mdi-email-outline"></i>
                 </span> Data SPPD
               </h3>
-              
+              <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <span></span><button type="button" class="btn-sm btn-gradient-success btn-fw">
+                        <a style="text-decoration: none; color:white; font-weight:bold" href="SPPDTambah.aspx">
+                            <i class="mdi mdi-plus"></i>&nbsp; Ajukan SPPD</a></button>
+                  </li>
+                </ul>
+              </nav>
             </div>
-            <div class="row">
+            <%--<div class="row">
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">
                   <div class="card-body">
                     <img src="../../assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Selesai <i class="mdi mdi-check-circle-outline float-right"></i>
                     </h4>
-                    <h2 class="mb-5">2</h2>
+                    <h2 class="mb-5">1</h2>
                   </div>
                 </div>
               </div>
@@ -171,7 +174,7 @@
                     <img src="../../assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Progress <i class="mdi mdi mdi-refresh mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">1</h2>
+                    <h2 class="mb-5">0</h2>
                   </div>
                 </div>
               </div>
@@ -181,118 +184,61 @@
                     <img src="../../assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3">Ditolak <i class="mdi mdi mdi-close-circle-outline mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5">1</h2>
+                    <h2 class="mb-5">0</h2>
                   </div>
                 </div>
               </div>
-            </div>
-
-              
+            </div>--%>
 
               <div class="row">
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Data Pengajuan Surat Perintah Perjalanan Dinas</h4>
-                      
-                    <div class="card-title">
-                          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="878px" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
-                              <AlternatingRowStyle BackColor="White" />
-                              <Columns>
-                                  <asp:BoundField DataField="kegiatan" HeaderText="kegiatan" SortExpression="kegiatan" />
-                                  <asp:BoundField DataField="tanggal_diajukan" HeaderText="tanggal_diajukan" SortExpression="tanggal_diajukan" />
-                                  <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
-                              </Columns>
-                              <FooterStyle BackColor="#CCCC99" />
-                              <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                              <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                              <RowStyle BackColor="#F7F7DE" />
-                              <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                              <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                              <SortedAscendingHeaderStyle BackColor="#848384" />
-                              <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                              <SortedDescendingHeaderStyle BackColor="#575357" />
-                          </asp:GridView>
-                          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" SelectCommand="SELECT [kegiatan], [tanggal_diajukan], [status] FROM [sppd]"></asp:SqlDataSource>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-              <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Data Pengajuan Surat Perintah Perjalanan Dinas</h4>
-                      
                     <div class="table-responsive">
-                      <table class="table table-striped table-bordered" style="width:100%">
-                        <thead>
-                          <tr>
-                            <th class="auto-style1"> Nama </th>
-                            <th> Subject </th>
-                            <th> Tanggal Diajukan </th>
-                            <th> Status </th>
-                            <th> Aksi </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="auto-style1">
-                              <img src="../../assets/images/faces/face1.jpg" class="me-2" alt="image"> David Grey
-                            </td>
-                            <td> Survey Lokasi </td>
-                            <td> 19/11/2022 </td>
-                            <td> <label class="badge badge-gradient-success">Selesai</label> </td>
-                            <td>
-                                <button type="button" class="btn-sm btn-gradient-info btn-fw"><a style="text-decoration: none; color:white;" href="SPPDDetail.aspx"><i class="mdi mdi-information"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-warning btn-fw"><a style="text-decoration: none; color:white;" href="SPPDEdit.aspx"><i class="mdi mdi-pencil"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-danger btn-fw"><a style="text-decoration: none; color:white;" href="SPPDHapus.aspx"><i class="mdi mdi-delete"></i></a></button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="auto-style1">
-                              <img src="../../assets/images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson
-                            </td>
-                            <td> Pengabdian Masyarakat </td>
-                            <td> 18/11/2022 </td>
-                            <td> <label class="badge badge-gradient-danger">Ditolak</label> </td>
-                            <td>
-                                <button type="button" class="btn-sm btn-gradient-info btn-fw"><a style="text-decoration: none; color:white;" href="SPPDDetail.aspx"><i class="mdi mdi-information"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-warning btn-fw"><a style="text-decoration: none; color:white;" href="SPPDEdit.aspx"><i class="mdi mdi-pencil"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-danger btn-fw"><a style="text-decoration: none; color:white;" href="SPPDHapus.aspx"><i class="mdi mdi-delete"></i></a></button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="auto-style1">
-                              <img src="../../assets/images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel
-                            </td>
-                            <td> Rapat Besar </td>
-                            <td> 18/11/2022 </td>
-                            <td> <label class="badge badge-gradient-warning">Progress</label> </td>
-                            <td>
-                                <button type="button" class="btn-sm btn-gradient-info btn-fw"><a style="text-decoration: none; color:white;" href="SPPDDetail.aspx"><i class="mdi mdi-information"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-warning btn-fw"><a style="text-decoration: none; color:white;" href="SPPDEdit.aspx"><i class="mdi mdi-pencil"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-danger btn-fw"><a style="text-decoration: none; color:white;" href="SPPDHapus.aspx"><i class="mdi mdi-delete"></i></a></button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="auto-style1">
-                              <img src="../../assets/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
-                            </td>
-                            <td> Pelatihan </td>
-                            <td> 17/11/2022 </td>
-                            <td> <label class="badge badge-gradient-success">Selesai</label> </td>
-                            <td>
-                                <button type="button" class="btn-sm btn-gradient-info btn-fw"><a style="text-decoration: none; color:white;" href="SPPDDetail.aspx"><i class="mdi mdi-information"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-warning btn-fw"><a style="text-decoration: none; color:white;" href="SPPDEdit.aspx"><i class="mdi mdi-pencil"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-danger btn-fw"><a style="text-decoration: none; color:white;" href="SPPDHapus.aspx"><i class="mdi mdi-delete"></i></a></button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="1032px">
+                          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                          <Columns>
+                              <asp:BoundField DataField="kegiatan" HeaderText="kegiatan" SortExpression="kegiatan" />
+                              <asp:BoundField DataField="keterangan" HeaderText="keterangan" SortExpression="keterangan" />
+                              <asp:BoundField DataField="anggaran" HeaderText="anggaran" SortExpression="anggaran" />
+                              
+                              <asp:BoundField DataField="tanggal_diajukan" HeaderText="tanggal_diajukan" SortExpression="tanggal_diajukan" />
+                              <asp:BoundField DataField="tanggal_pergi" HeaderText="tanggal_pergi" SortExpression="tanggal_pergi" />
+                              <asp:BoundField DataField="tanggal_kembali" HeaderText="tanggal_kembali" SortExpression="tanggal_kembali" />
+                              <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" /> 
+                              <asp:TemplateField>
+                <ItemTemplate>
+
+                     <asp:LinkButton ID="detail" runat="server" class="btn-sm btn-gradient-info btn-fw"><i class="mdi mdi-information"></i></asp:LinkButton>
+                                <asp:Button ID="Approve" runat="server" class="btn-sm btn-success" Text="Approve"></asp:Button>
+                    <asp:Button ID="Reject" runat="server" class="btn-sm btn-danger" Text="Reject"></asp:Button>
+                </ItemTemplate>
+            </asp:TemplateField>
+                          </Columns>
+                          <EditRowStyle BackColor="#999999" />
+                          <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                          <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                          <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                          <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                          <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                          <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                          <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                          <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                          <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                        </asp:GridView>  
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" SelectCommand="SELECT [kegiatan], [keterangan], [anggaran], [status], [tanggal_diajukan], [tanggal_pergi], [tanggal_kembali] FROM [surat_dinas]"></asp:SqlDataSource>
+                        <br />
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" SelectCommand="SELECT * FROM [surat_dinas]" UpdateCommand="UPDATE surat_dinas(status) SET (@status)">
+                            <UpdateParameters>
+                                <asp:Parameter DefaultValue="success" Name="status" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" SelectCommand="SELECT * FROM [surat_dinas]" UpdateCommand="UPDATE surat_dinas(status) SET (@status)">
+                            <UpdateParameters>
+                                <asp:Parameter DefaultValue="ditolak" Name="status" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </div>
                   </div>
                 </div>

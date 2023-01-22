@@ -18,6 +18,7 @@
     
   </head>
   <body>
+      <form id="form1" runat="server">
     <div class="container-scroller">
 
       <!-- partial:partials/_navbar.html -->
@@ -172,7 +173,57 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Anggota Dinas</h4>
                     <div class="table-responsive">
-                      <table class="table table-striped table-bordered" style="width:100%">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_user" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="1031px">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                <asp:BoundField DataField="id_user" HeaderText="id_user" InsertVisible="False" ReadOnly="True" SortExpression="id_user" />
+                                <asp:BoundField DataField="nama" HeaderText="nama" SortExpression="nama" />
+                                <asp:BoundField DataField="nip" HeaderText="nip" SortExpression="nip" />
+                                <asp:BoundField DataField="alamat" HeaderText="alamat" SortExpression="alamat" />
+                                <asp:BoundField DataField="nohp" HeaderText="nohp" SortExpression="nohp" />
+                                <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                                <asp:BoundField DataField="role" HeaderText="role" SortExpression="role" />
+                                <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
+                            </Columns>
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" DeleteCommand="DELETE FROM [user] WHERE [id_user] = @id_user" InsertCommand="INSERT INTO [user] ([nama], [nip], [alamat], [nohp], [email], [role], [photo_profil], [password]) VALUES (@nama, @nip, @alamat, @nohp, @email, @role, @photo_profil, @password)" SelectCommand="SELECT * FROM [user]" UpdateCommand="UPDATE [user] SET [nama] = @nama, [nip] = @nip, [alamat] = @alamat, [nohp] = @nohp, [email] = @email, [role] = @role, [photo_profil] = @photo_profil, [password] = @password WHERE [id_user] = @id_user">
+                            <DeleteParameters>
+                                <asp:Parameter Name="id_user" Type="Int32" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="nama" Type="String" />
+                                <asp:Parameter Name="nip" Type="String" />
+                                <asp:Parameter Name="alamat" Type="String" />
+                                <asp:Parameter Name="nohp" Type="String" />
+                                <asp:Parameter Name="email" Type="String" />
+                                <asp:Parameter Name="role" Type="String" />
+                                <asp:Parameter Name="photo_profil" Type="Object" />
+                                <asp:Parameter Name="password" Type="String" />
+                            </InsertParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="nama" Type="String" />
+                                <asp:Parameter Name="nip" Type="String" />
+                                <asp:Parameter Name="alamat" Type="String" />
+                                <asp:Parameter Name="nohp" Type="String" />
+                                <asp:Parameter Name="email" Type="String" />
+                                <asp:Parameter Name="role" Type="String" />
+                                <asp:Parameter Name="photo_profil" Type="Object" />
+                                <asp:Parameter Name="password" Type="String" />
+                                <asp:Parameter Name="id_user" Type="Int32" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
+                      <%--<table class="table table-striped table-bordered" style="width:100%">
                         <thead>
                           <tr>
                             <th> Nama </th>
@@ -242,7 +293,45 @@
                             </td>
                           </tr>
                         </tbody>
-                      </table>
+                      </table>--%>
+                        <br />
+                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_lkegiatan" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:BoundField DataField="id_lkegiatan" HeaderText="id_lkegiatan" InsertVisible="False" ReadOnly="True" SortExpression="id_lkegiatan" />
+                                <asp:BoundField DataField="kegiatan" HeaderText="kegiatan" SortExpression="kegiatan" />
+                                <asp:BoundField DataField="keterangan" HeaderText="keterangan" SortExpression="keterangan" />
+                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                            </Columns>
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" DeleteCommand="DELETE FROM [lkegiatan] WHERE [id_lkegiatan] = @id_lkegiatan" InsertCommand="INSERT INTO [lkegiatan] ([kegiatan], [bukti_anggaran], [bukti_kegiatan], [keterangan]) VALUES (@kegiatan, @bukti_anggaran, @bukti_kegiatan, @keterangan)" SelectCommand="SELECT * FROM [lkegiatan]" UpdateCommand="UPDATE [lkegiatan] SET [kegiatan] = @kegiatan, [bukti_anggaran] = @bukti_anggaran, [bukti_kegiatan] = @bukti_kegiatan, [keterangan] = @keterangan WHERE [id_lkegiatan] = @id_lkegiatan">
+                            <DeleteParameters>
+                                <asp:Parameter Name="id_lkegiatan" Type="Int32" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="kegiatan" Type="String" />
+                                <asp:Parameter Name="bukti_anggaran" Type="Object" />
+                                <asp:Parameter Name="bukti_kegiatan" Type="Object" />
+                                <asp:Parameter Name="keterangan" Type="String" />
+                            </InsertParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="kegiatan" Type="String" />
+                                <asp:Parameter Name="bukti_anggaran" Type="Object" />
+                                <asp:Parameter Name="bukti_kegiatan" Type="Object" />
+                                <asp:Parameter Name="keterangan" Type="String" />
+                                <asp:Parameter Name="id_lkegiatan" Type="Int32" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </div>
                   </div>
                 </div>
@@ -288,5 +377,6 @@
     <script src="../../assets/js/dashboard.js"></script>
     <script src="../../assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
+      </form>
   </body>
 </html>

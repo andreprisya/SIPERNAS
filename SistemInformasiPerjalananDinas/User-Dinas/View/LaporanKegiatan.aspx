@@ -21,6 +21,7 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
   </head>
   <body>
+      <form id="form1" runat="server">
     <div class="container-scroller">
 
       <!-- partial:partials/_navbar.html -->
@@ -147,10 +148,12 @@
                   <i class="mdi mdi-email-outline"></i>
                 </span>Data Laporan Kegiatan
               </h3>
-              <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item active" aria-current="page">
-
+                    <span></span><button type="button" class="btn-sm btn-gradient-success btn-fw">
+                        <a style="text-decoration: none; color:white; font-weight:bold" href="LaporanKegiatanTambah.aspx">
+                            <i class="mdi mdi-plus"></i>&nbsp; Laporan Kegiatan</a></button>
                   </li>
                 </ul>
               </nav>
@@ -164,7 +167,44 @@
                     <h4 class="card-title">Laporan Kegiatan</h4>
                                  
                     <div class="table-responsive">
-                      <table class="table">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_lkegiatan" DataSourceID="SqlDataSource1" Width="954px" CellPadding="4" ForeColor="#333333" GridLines="None">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:BoundField DataField="id_lkegiatan" HeaderText="id_lkegiatan" InsertVisible="False" ReadOnly="True" SortExpression="id_lkegiatan" />
+                                <asp:BoundField DataField="kegiatan" HeaderText="kegiatan" SortExpression="kegiatan" />
+                                <asp:BoundField DataField="keterangan" HeaderText="keterangan" SortExpression="keterangan" />
+                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                            </Columns>
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" DeleteCommand="DELETE FROM [lkegiatan] WHERE [id_lkegiatan] = @id_lkegiatan" InsertCommand="INSERT INTO [lkegiatan] ([kegiatan], [bukti_anggaran], [bukti_kegiatan], [keterangan]) VALUES (@kegiatan, @bukti_anggaran, @bukti_kegiatan, @keterangan)" SelectCommand="SELECT * FROM [lkegiatan]" UpdateCommand="UPDATE [lkegiatan] SET [kegiatan] = @kegiatan, [bukti_anggaran] = @bukti_anggaran, [bukti_kegiatan] = @bukti_kegiatan, [keterangan] = @keterangan WHERE [id_lkegiatan] = @id_lkegiatan">
+                            <DeleteParameters>
+                                <asp:Parameter Name="id_lkegiatan" Type="Int32" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="kegiatan" Type="String" />
+                                <asp:Parameter Name="bukti_anggaran" Type="Object" />
+                                <asp:Parameter Name="bukti_kegiatan" Type="Object" />
+                                <asp:Parameter Name="keterangan" Type="String" />
+                            </InsertParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="kegiatan" Type="String" />
+                                <asp:Parameter Name="bukti_anggaran" Type="Object" />
+                                <asp:Parameter Name="bukti_kegiatan" Type="Object" />
+                                <asp:Parameter Name="keterangan" Type="String" />
+                                <asp:Parameter Name="id_lkegiatan" Type="Int32" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
+                      <%--<table class="table">
                         <thead>
                             <button type="button" class="btn btn-outline-primary btn-icon-text btn-sm"> <a href="LaporanKegiatanTambah.aspx"</a>   Tambah Laporan Kegiatan <i class="mdi mdi-file-check btn-icon-append"></i></button>
                           <tr>
@@ -198,7 +238,7 @@
                           </tr>
                          
                         </tbody>
-                      </table>
+                      </table>--%>
                     </div>
                   </div>
                 </div>
@@ -236,5 +276,6 @@
     <script src="../../assets/js/dashboard.js"></script>
     <script src="../../assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
+      </form>
   </body>
 </html>

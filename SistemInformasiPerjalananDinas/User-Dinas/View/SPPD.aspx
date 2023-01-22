@@ -21,6 +21,7 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
   </head>
   <body>
+      <form id="form1" runat="server">
     <div class="container-scroller">
 
       <!-- partial:partials/_navbar.html -->
@@ -119,7 +120,7 @@
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
                   <span class="font-weight-bold mb-2">David Gray</span>
-                  <span class="text-secondary text-small">Kepala Bidang I</span>
+                  <span class="text-secondary text-small">Pegawai</span>
                 </div>
               </a>
             </li>
@@ -156,7 +157,7 @@
                 </ul>
               </nav>
             </div>
-            <div class="row">
+            <%--<div class="row">
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">
                   <div class="card-body">
@@ -187,7 +188,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>--%>
 
               <div class="row">
               <div class="col-12 grid-margin">
@@ -195,32 +196,46 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Pengajuan Surat Perintah Perjalanan Dinas</h4>
                     <div class="table-responsive">
-                      <table class="table table-striped table-bordered" style="width:100%">
-                        <thead>
-                          <tr>
-                            <th> Nama </th>
-                            <th> Subject </th>
-                            <th> Tanggal Diajukan </th>
-                            <th> Status </th>
-                            <th> Aksi </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <img src="../../assets/images/faces/face1.jpg" class="me-2" alt="image"> David Grey
-                            </td>
-                            <td> Survey Lokasi </td>
-                            <td> 19/11/2022 </td>
-                            <td> <label class="badge badge-gradient-success">Selesai</label> </td>
-                            <td>
-                                <button type="button" class="btn-sm btn-gradient-info btn-fw"><a style="text-decoration: none; color:white;" href="SPPDDetail.aspx"><i class="mdi mdi-information"></i></a></button>
-                                <button type="button" class="btn-sm btn-gradient-dark btn-icon-text"><a style="text-decoration: none; color:white;"> <i class="mdi mdi-file-check btn-icon-append"></i></a></button>
-                            </td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
+                      <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="859px">
+                          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                          <Columns>
+                              <asp:BoundField DataField="kegiatan" HeaderText="kegiatan" SortExpression="kegiatan" />
+                              <asp:BoundField DataField="keterangan" HeaderText="keterangan" SortExpression="keterangan" />
+                              <asp:BoundField DataField="anggaran" HeaderText="anggaran" SortExpression="anggaran" />
+                              
+                              <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
+                              
+                              <asp:BoundField DataField="tanggal_pergi" HeaderText="tanggal_pergi" SortExpression="tanggal_pergi" />
+                              <asp:BoundField DataField="tanggal_diajukan" HeaderText="tanggal_diajukan" SortExpression="tanggal_diajukan" />
+                              <asp:BoundField DataField="tanggal_kembali" HeaderText="tanggal_kembali" SortExpression="tanggal_kembali" />
+                          </Columns>
+                          <EditRowStyle BackColor="#999999" />
+                          <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                          <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                          <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                          <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                          <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                          <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                          <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                          <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                          <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                        </asp:GridView>  
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" SelectCommand="SELECT [kegiatan], [keterangan], [anggaran], [status], [tanggal_pergi], [tanggal_diajukan], [tanggal_kembali] FROM [surat_dinas]"></asp:SqlDataSource>
+                        <br />
+                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="id_sppd" DataSourceID="SqlDataSource2">
+                            <Columns>
+                                <asp:BoundField DataField="id_sppd" HeaderText="id_sppd" InsertVisible="False" ReadOnly="True" SortExpression="id_sppd" />
+                                <asp:BoundField DataField="kegiatan" HeaderText="kegiatan" SortExpression="kegiatan" />
+                                <asp:BoundField DataField="tempat" HeaderText="tempat" SortExpression="tempat" />
+                                <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
+                                <asp:BoundField DataField="keterangan" HeaderText="keterangan" SortExpression="keterangan" />
+                                <asp:BoundField DataField="tanggal_diajukan" HeaderText="tanggal_diajukan" SortExpression="tanggal_diajukan" />
+                                <asp:BoundField DataField="tanggal_pergi" HeaderText="tanggal_pergi" SortExpression="tanggal_pergi" />
+                                <asp:BoundField DataField="tanggal_kembali" HeaderText="tanggal_kembali" SortExpression="tanggal_kembali" />
+                                <asp:BoundField DataField="anggaran" HeaderText="anggaran" SortExpression="anggaran" />
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" SelectCommand="SELECT * FROM [sppd]"></asp:SqlDataSource>
                     </div>
                   </div>
                 </div>
@@ -258,5 +273,6 @@
     <script src="../../assets/js/dashboard.js"></script>
     <script src="../../assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
+      </form>
   </body>
 </html>

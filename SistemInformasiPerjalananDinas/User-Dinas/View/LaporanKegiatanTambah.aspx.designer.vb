@@ -12,4 +12,58 @@ Option Explicit On
 
 
 Partial Public Class LaporanKegiatanTambah
+
+    '''<summary>
+    '''kegiatan control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents kegiatan As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''keterangan control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents keterangan As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''bukti_kegiatan control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents bukti_kegiatan As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''bukti_anggaran control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents bukti_anggaran As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''tambah control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tambah As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''SqlDataSource1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

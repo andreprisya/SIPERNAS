@@ -164,22 +164,28 @@
                   <div class="card-body">
                     <h4 class="card-title">Tambah Laporan Kegiatan</h4>
                     <p class="card-description"> </p>
-                    <form class="forms-sample">
+                    <form runat="server" class="forms-sample">
                       <div class="form-group">
                         <label for="exampleInputName1">Nama Kegiatan</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nama Kegiatan">
+                        <asp:TextBox runat="server" type="text" class="form-control" id="kegiatan" placeholder="Nama Kegiatan"/>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword4">Tanggal</label>
-                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Tanggal">
+                        <label for="exampleInputName1">Keterangan</label>
+                        <asp:TextBox runat="server" type="text" class="form-control" ID="keterangan" placeholder="Keterangan"/>
                       </div>
                         <div class="form-group">
-                        <label for="exampleInputPassword4">Tempat Kegiatan</label>
-                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Tempat Kegiatan">
+                        <label>Bukti Kegiatan</label>
+                        <asp:FileUpload runat="server" ID="bukti_kegiatan" type="file" name="img[]" class="file-upload-default"/>
+                        <div class="input-group col-xs-12">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                          <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                          </span>
+                        </div>
                       </div>
                          <div class="form-group">
-                        <label>Bukti Kegiatan</label>
-                        <input type="file" name="img[]" class="file-upload-default">
+                        <label>Bukti Anggaran</label>
+                        <asp:FileUpload runat="server" ID="bukti_anggaran" type="file" name="img[]" class="file-upload-default"/>
                         <div class="input-group col-xs-12">
                           <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
                           <span class="input-group-append">
@@ -198,8 +204,18 @@
                   </div>-->
                   
                
-                      <button type="submit" class="btn btn-gradient-primary me-2"><a href="/User-Dinas/View/KelolaLaporanKegiatan.aspx"/a>Submit</button>
+                      <asp:Button runat="server" ID="tambah" type="submit" Text="Submit" class="btn btn-primary me-2" />
                       <button class="btn btn-light"><a href="/User-Dinas/View/KelolaLaporanKegiatan.aspx"/a>Cancel</button>
+                        <br />
+                        <br />
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sipernasConnectionString %>" InsertCommand="INSERT INTO lkegiatan(kegiatan, keterangan,bukti_anggaran, bukti_kegiatan) VALUES (@kegiatan,@keterangan,@bukti_anggaran,@bukti_kegiatan)" SelectCommand="SELECT * FROM [lkegiatan]">
+                            <InsertParameters>
+                                <asp:ControlParameter ControlID="kegiatan" Name="kegiatan" PropertyName="Text" />
+                                <asp:ControlParameter ControlID="keterangan" Name="keterangan" PropertyName="Text" />
+                                <asp:ControlParameter ControlID="bukti_anggaran" Name="bukti_anggaran" PropertyName="FileBytes" />
+                                <asp:ControlParameter ControlID="bukti_kegiatan" Name="bukti_kegiatan" PropertyName="FileBytes" />
+                            </InsertParameters>
+                        </asp:SqlDataSource>
                     </form>
                   </div>
                 </div>

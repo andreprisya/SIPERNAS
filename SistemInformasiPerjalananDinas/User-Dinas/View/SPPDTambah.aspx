@@ -21,6 +21,7 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
   </head>
   <body>
+      <form id="form1" runat="server">
     <div class="container-scroller">
 
       <!-- partial:partials/_navbar.html -->
@@ -155,37 +156,50 @@
                   <div class="card-body">
                     <h4 class="card-title">Data Surat Perintah Perjalanan Dinas</h4>
                     <p class="card-description"> Masukkan Data Surat Perintah Perjalanan Dinas </p>
-                    <form class="forms-sample" action="SPPD.aspx">
                       <div class="form-group">
                         <label for="exampleInputName2">Subject*</label>
-                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Judul Pengajuan">
-                      </div>
-                        <div class="form-group">
-                        <label for="exampleInputName3">Lama Jalan (Hari)*</label>
-                        <input type="text" class="form-control" id="exampleInputName3" placeholder="3">
+                          
+                          <asp:Textbox ID="TextBox1" runat="server" class="form-control" placeholder="Judul Pengajuan"/>
                       </div>
                         
                         <div class="form-group">
                         <label for="exampleInputName4">Anggaran*</label>
-                        <input type="text" class="form-control" id="exampleInputName4" placeholder="1.500.000">
+                        <asp:TextBox id="anggaran" runat="server" type="text" class="form-control" placeholder="1.500.000"/>
                       </div>
-                        <div class="form-group">
-                        <label for="exampleSelectStatus">Angkutan*</label>
-                        <select class="form-control" id="exampleSelectStatus">
-                          <option>Pesawat</option>
-                          <option>Kereta</option>
-                          <option>Bus</option>
-                          <option>Travel</option>
-                          <option>Kapal</option>
-                        </select>
+
+                      <div class="form-group">
+                        <label for="exampleInputName4">Tempat*</label>
+                        <asp:TextBox id="tempat" runat="server" type="text" class="form-control" placeholder="Pekanbaru"/>
                       </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputName4">Tanggal Pergi*</label>
+                        <asp:TextBox id="tanggal_pergi" runat="server" type="text" class="form-control" placeholder="tanggal/bulan/tahun"/>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputName4">Tanggal Kembali*</label>
+                        <asp:TextBox id="tanggal_kembali" runat="server" type="text" class="form-control" placeholder="tanggal/bulan/tahun"/>
+                      </div>
+                        
                         <div class="form-group">
                         <label for="exampleTextarea1">Keterangan</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                        <asp:TextBox id="keterangan" runat="server" class="form-control" />
                       </div>
-                      <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-                      <button class="btn btn-light">Cancel</button>
-                    </form>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=sipernas;Integrated Security=True" InsertCommand="INSERT INTO surat_dinas(kegiatan, keterangan, anggaran, status, tanggal_pergi, tanggal_kembali,tanggal_diajukan) VALUES (@subject,@keterangan,@anggaran,@status,@tanggal_pergi,@tanggal_kembali,@tanggal_diajukan)" SelectCommandType="StoredProcedure">
+                          <InsertParameters>
+                              <asp:ControlParameter ControlID="TextBox1" Name="subject" PropertyName="Text" />
+                              <asp:ControlParameter ControlID="keterangan" Name="keterangan" PropertyName="Text" />
+                              <asp:ControlParameter ControlID="anggaran" Name="anggaran" PropertyName="Text" />
+                              <asp:Parameter DefaultValue="proses" Name="status" />
+                              <asp:ControlParameter ControlID="tanggal_pergi" Name="tanggal_pergi" PropertyName="Text" DefaultValue="" />
+                              <asp:ControlParameter ControlID="tanggal_kembali" Name="tanggal_kembali" PropertyName="Text" />
+                              <asp:Parameter DefaultValue="21/01/2023" Name="tanggal_diajukan" />
+                          </InsertParameters>
+                      </asp:SqlDataSource>
+                      <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-primary" />
+                      <asp:Button ID="Button2" runat="server" class="btn btn-light" Text="Cancel"/>
+                      
                   </div>
                 </div>
               </div>
@@ -222,5 +236,6 @@
     <script src="../../assets/js/dashboard.js"></script>
     <script src="../../assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
+      </form>
   </body>
 </html>
